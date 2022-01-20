@@ -1,0 +1,155 @@
+.form {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.form .add_img_btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: rgba(255, 255, 255, 0.562);
+  position: relative;
+}
+
+.form .add_img_btn input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form .add_img_btn i {
+  font-size: 4rem;
+  color: #111111;
+}
+
+.form h3 {
+  margin: 10px 0px 40px;
+  color: white;
+}
+
+.form h1 {
+  text-transform: uppercase;
+  font-size: 48px;
+}
+
+.form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form form input {
+  font-size: 18px;
+  padding: 15px 8px;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  width: 440px;
+  margin: 15px 0px;
+  color: white;
+}
+
+.form form div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form form div p {
+  font-size: 16px;
+}
+
+.form form div p span {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form form button {
+  padding: 7px 50px;
+  background-color: #46b2ff9c;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+  border: 3px solid #41B0FF;
+  margin: 60px 0px 90px;
+}
+
+.form form button i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.form form .google {
+  padding: 8px 25px;
+  background-color: rgba(255, 255, 255, 0.582);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+  border: 3px solid white;
+}
+/*# sourceMappingURL=form.css.map */

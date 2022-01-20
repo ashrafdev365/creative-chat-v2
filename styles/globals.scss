@@ -1,45 +1,42 @@
+@import './utils/varialbles/colors';
 * {
   margin: 0px;
   padding: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   outline: none;
   border: none;
 }
-
-body {
+body{
   overflow-x: hidden;
-  background-color: #111111;
+  background-color: $body;
 }
-
 a {
   text-decoration: none;
 }
-
 p,
 button {
   font-size: 16px;
-  color: white;
+  color: $font;
 }
-
 h1 {
   font-size: 58px;
-  color: white;
+  color: $font;
 }
 
 body::-webkit-scrollbar {
   width: 6px;
 }
-
 body::-webkit-scrollbar-track {
   background: transparent;
 }
-
 body::-webkit-scrollbar-thumb {
-  background: #cacaca;
+  background: #cacaca; 
   border-radius: 10px;
 }
+
+
 
 @media screen and (max-width: 1050px) {
   p,
@@ -50,7 +47,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 38px;
   }
 }
-
 @media screen and (max-width: 750px) {
   h1 {
     font-size: 32px;
@@ -66,4 +62,3 @@ body::-webkit-scrollbar-thumb {
     font-size: 28px;
   }
 }
-/*# sourceMappingURL=globals.css.map */

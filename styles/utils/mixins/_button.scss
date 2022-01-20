@@ -1,0 +1,21 @@
+@mixin button(
+  $pad: 8px 25px,
+  $mar: 0px,
+  $back: #46b2ff9c,
+  $radius: 4px,
+  $color: white,
+  $weight: 500,
+  $size: 16px,
+  $border: 3px solid #41B0FF
+) {
+  padding: $pad;
+  background-color: $back;
+  color: $color;
+  border-radius: $radius;
+  cursor: pointer;
+  font-weight: $weight;
+  font-size: $size;
+  margin: $mar;
+  transition-duration: 0.7s;
+  border: $border;
+}

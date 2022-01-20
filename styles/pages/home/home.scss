@@ -1,0 +1,65 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+header {
+  width: 100vw;
+  height: 100vh;
+  @include flex($direc: column);
+
+  .main_image_div {
+    position: relative;
+    .style1 {
+      border: 5px solid white;
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: -50px;
+      left: -60px;
+      transform: rotate(45deg);
+      animation: image 14s 5s ease-in-out infinite;
+      z-index: -1;
+    }
+    .style2 {
+      border: 5px solid white;
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: -50px;
+      left: -60px;
+      animation: image 18s 5s ease infinite;
+      z-index: -1;
+    }
+    @keyframes image {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    img {
+      border-radius: 50%;
+      width: 380px;
+      height: 380px;
+      object-fit: cover;
+    }
+  }
+  h1 {
+    text-align: center;
+    margin: 60px 0px 20px;
+    span {
+      color: $button;
+    }
+  }
+  h2 {
+    color: $font;
+    font-size: $heading-md;
+  }
+  button {
+    @include button($pad: 10px 50px);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 80px;
+  }
+}

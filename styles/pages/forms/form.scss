@@ -1,0 +1,86 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+.form {
+  width: 100vw;
+  height: 100vh;
+  @include flex($direc: column);
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .add_img_btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0.562);
+
+    position: relative;
+    input {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    i {
+      font-size: 4rem;
+      color: $body;
+    }
+  }
+  h3 {
+    margin: 10px 0px 40px;
+    color: $font;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 48px;
+  }
+  form {
+    @include flex($direc: column);
+    input {
+      font-size: $pera-xl;
+      padding: 15px 8px;
+      background-color: transparent;
+      border-bottom: 2px solid white;
+      width: 440px;
+      margin: 15px 0px;
+      color: $font;
+    }
+    div {
+      width: 100%;
+      @include flex($content: space-between);
+      p {
+        font-size: $pera-lg;
+        span {
+          color: $font;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+    button {
+      @include button($pad: 7px 50px);
+      margin: 60px 0px 90px;
+      i {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+    }
+    .google {
+      @include button(
+        $back: rgba(255, 255, 255, 0.582),
+        $border: 3px solid white
+      );
+    }
+  }
+}
