@@ -68,19 +68,19 @@
         }
       }
     }
-    button {
-      @include button($pad: 7px 50px);
-      margin: 60px 0px 90px;
-      i {
-        font-size: 20px;
-        margin-right: 10px;
-      }
-    }
-    .google {
-      @include button(
-        $back: rgba(255, 255, 255, 0.582),
-        $border: 3px solid white
-      );
-    }
+  }
+  .google {
+    @include button(
+      $back: rgba(255, 255, 255, 0.582),
+      $border: 3px solid white
+    );
+  }
+}
+.submit {
+  @include button($pad: 7px 50px);
+  margin: 60px 0px 90px;
+  i {
+    font-size: 20px;
+    margin-right: 10px;
   }
 }

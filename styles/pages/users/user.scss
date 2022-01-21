@@ -1,98 +1,96 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+@import "../../utils/varialbles/border";
 .user_nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90vw;
-  padding: 10px 0;
-  margin: 0 auto;
-  button{
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
+  @include flex($content: space-between);
+  width: 90%;
+  height: 100px;
+  margin: 10px auto 0;
+  .user_info {
+    @include flex($content: space-between);
+    h1 {
+      font-size: 38px;
+      margin-left: 10px;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  button {
+    @include button();
+    text-transform: uppercase;
   }
 }
 .search {
-  width: 90vw;
-  font-size: 18px;
-  margin: 20px auto 50px;
-  display: block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  background: #f2f1f1;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 5px auto 50px;
+  position: relative;
+  span {
+    background-color: #ffffffbe;
+    border: 2px solid #ffffff;
+    padding: 5px 7px;
+    border-radius: $reduce-md;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    i {
+      font-size: 1.1rem;
+      color: $body;
+      font-weight: 600;
+    }
+  }
+  input {
+    width: 100%;
+    padding: 10px 54px;
+    font-size: 18px;
+    background-color: #41b0ff96;
+    border: 3px solid #41b0ff;
+    border-radius: $reduce-md;
+    color: $font;
+    font-weight: 500;
+  }
+  input::placeholder {
+    color: $font;
+  }
 }
 
 .users_section {
-  width: 90vw;
+  width: 90%;
   margin: 0 auto;
   cursor: pointer;
   overflow-y: auto;
-  .user_box {
+  .user {
     display: flex;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363);
     align-items: center;
     div {
       margin-left: 20px;
+      width: 100%;
       h2 {
         text-transform: capitalize;
+        font-size: 30px;
+        color: $font;
+        font-weight: 500;
       }
     }
     img {
-      width: 55px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .user_nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90vw;
-    padding: 10px 0;
-    margin: 0 auto;
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 2px;
-    }
-  }
-  .search {
-    width: 90vw;
-    font-size: 16px;
-    margin: 10px auto 20px;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 4px;
-    background: #f2f1f1;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .users_section {
-    width: 90vw;
-    margin: 0 auto;
-    cursor: pointer;
-    overflow-y: auto;
-    .user_box {
-      display: flex;
-      align-items: center;
-      padding: 10px 0;
-      margin: 10px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.123);
-      div {
-        margin-left: 15px;
-        h2 {
-          text-transform: capitalize;
-          font-size: 22px;
-        }
-      }
-      img {
-        width: 45px;
-        border-radius: 4px;
-      }
+    i {
+      float: right;
+      font-size: 1.5rem;
+      color: $font;
+      margin: 10px 10px 0px 0px;
     }
   }
 }

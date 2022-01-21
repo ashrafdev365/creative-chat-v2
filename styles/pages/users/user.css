@@ -2,125 +2,161 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 90vw;
-  padding: 10px 0;
-  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 90%;
+  height: 100px;
+  margin: 10px auto 0;
+}
+
+.user_nav .user_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.user_nav .user_info h1 {
+  font-size: 38px;
+  margin-left: 10px;
+}
+
+.user_nav .user_info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .user_nav button {
-  padding: 8px 20px;
+  padding: 8px 25px;
+  background-color: #46b2ff9c;
+  color: white;
   border-radius: 4px;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+  border: 3px solid #41B0FF;
+  text-transform: uppercase;
 }
 
 .search {
-  width: 90vw;
+  width: 90%;
+  margin: 5px auto 50px;
+  position: relative;
+}
+
+.search span {
+  background-color: #ffffffbe;
+  border: 2px solid #ffffff;
+  padding: 5px 7px;
+  border-radius: 6px;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.search span i {
+  font-size: 1.1rem;
+  color: #111111;
+  font-weight: 600;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px 54px;
   font-size: 18px;
-  margin: 20px auto 50px;
-  display: block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  background: #f2f1f1;
-  -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: #41b0ff96;
+  border: 3px solid #41b0ff;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+}
+
+.search input::-webkit-input-placeholder {
+  color: white;
+}
+
+.search input:-ms-input-placeholder {
+  color: white;
+}
+
+.search input::-ms-input-placeholder {
+  color: white;
+}
+
+.search input::placeholder {
+  color: white;
 }
 
 .users_section {
-  width: 90vw;
+  width: 90%;
   margin: 0 auto;
   cursor: pointer;
   overflow-y: auto;
 }
 
-.users_section .user_box {
+.users_section .user {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px 0;
+  padding: 15px 0;
   margin: 10px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.363);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.users_section .user_box div {
+.users_section .user div {
   margin-left: 20px;
+  width: 100%;
 }
 
-.users_section .user_box div h2 {
+.users_section .user div h2 {
   text-transform: capitalize;
+  font-size: 30px;
+  color: white;
+  font-weight: 500;
 }
 
-.users_section .user_box img {
-  width: 55px;
+.users_section .user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-@media screen and (max-width: 550px) {
-  .user_nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 90vw;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  .user_nav img {
-    width: 40px;
-    height: 40px;
-    border-radius: 2px;
-  }
-  .search {
-    width: 90vw;
-    font-size: 16px;
-    margin: 10px auto 20px;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 4px;
-    background: #f2f1f1;
-    -webkit-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
-  }
-  .users_section {
-    width: 90vw;
-    margin: 0 auto;
-    cursor: pointer;
-    overflow-y: auto;
-  }
-  .users_section .user_box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 10px 0;
-    margin: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
-  }
-  .users_section .user_box div {
-    margin-left: 15px;
-  }
-  .users_section .user_box div h2 {
-    text-transform: capitalize;
-    font-size: 22px;
-  }
-  .users_section .user_box img {
-    width: 45px;
-    border-radius: 4px;
-  }
+.users_section .user i {
+  float: right;
+  font-size: 1.5rem;
+  color: white;
+  margin: 10px 10px 0px 0px;
 }
 /*# sourceMappingURL=user.css.map */

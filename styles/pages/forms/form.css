@@ -119,7 +119,21 @@
   cursor: pointer;
 }
 
-.form form button {
+.form .google {
+  padding: 8px 25px;
+  background-color: rgba(255, 255, 255, 0.582);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0px;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+  border: 3px solid white;
+}
+
+.submit {
   padding: 7px 50px;
   background-color: #46b2ff9c;
   color: white;
@@ -134,22 +148,8 @@
   margin: 60px 0px 90px;
 }
 
-.form form button i {
+.submit i {
   font-size: 20px;
   margin-right: 10px;
-}
-
-.form form .google {
-  padding: 8px 25px;
-  background-color: rgba(255, 255, 255, 0.582);
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
-  margin: 0px;
-  -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
-  border: 3px solid white;
 }
 /*# sourceMappingURL=form.css.map */

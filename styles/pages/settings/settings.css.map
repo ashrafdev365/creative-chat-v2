@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,SAAS,CAAC;EACR,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,SAAS;EACjB,MAAM,EAAE,IAAI;CAuBb;;AA1BD,AAME,SANO,CAMP,GAAG,CAAC;EACF,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,eAAe;EACvB,MAAM,EAAE,aAAa;CACtB;;AAVH,AAWE,SAXO,CAWP,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,SAAS;CAC1B;;AAdH,AAeE,SAfO,CAeP,CAAC,CAAC;EACA,OAAO,EAAE,SAAS;EAClB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,mBAAmB,EAAE,IAAI;EACzB,MAAM,EAAE,OAAO;CAChB;;AArBH,AAsBE,SAtBO,CAsBP,CAAC,AAAA,MAAM,CAAC;EACN,gBAAgB,EAAE,0BAA0B;EAC5C,aAAa,EK7BL,GAAG;CL8BZ",
+    "sources": [
+        "settings.scss",
+        "../../utils/mixins/_flex.scss",
+        "../../utils/varialbles/_colors.scss",
+        "../../utils/mixins/_button.scss",
+        "../../utils/varialbles/_fonts.scss",
+        "../../utils/varialbles/_border.scss"
+    ],
+    "names": [],
+    "file": "settings.css"
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   onSnapshot,
   doc,
@@ -7,6 +7,7 @@ import {
   query,
   limit,
   addDoc,
+  setDoc,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -18,6 +19,8 @@ import {
 import { db } from "../Firebase/firebase";
 import { useAuth } from "../Firebase/Context";
 import { useRouter } from "next/router";
+import { updateProfile } from "firebase/auth";
+
 const signup = () => {
   const [input, setinput] = useState({
     name: "",
@@ -26,45 +29,57 @@ const signup = () => {
   });
   const [profile, setprofile] = useState("");
   const [profileUpload, setprofileUpload] = useState("");
+  const [btn, setbtn] = useState();
   const { signup, google, currentUser } = useAuth();
-  const { router } = useRouter();
+  const router = useRouter();
   const q = query(collection(db, `userInfo`));
 
-  console.log(currentUser);
-  console.log(`${profileUpload} : ${profile}`);
+  // useEffect(() => {
+  //   currentUser ? router.push("/") : null;
+  // });
+
   let value, name;
   const handleData = (e) => {
     name = e.target.name;
     value = e.target.value;
     setinput({ ...input, [name]: value });
   };
-
+  console.log(currentUser);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = input;
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !profile) {
       return alert("fill up");
     } else {
-      await addDoc(q, {
+      await setDoc(doc(db, "userInfo", email), {
+        uid: Math.floor(Math.random() * 900000000000000),
         name: name,
-        email: email,
-        pass: password,
-        image: profile,
+        photo: profile,
       });
       await signup(email, password);
-      setinput({
-        name: "",
-        email: "",
-        password: "",
-      });
     }
   };
+
+  const updateUserProfile = async () => {
+    await updateProfile(currentUser, {
+      displayName: input.name,
+      photoURL: profile,
+    });
+    setinput({
+      name: "",
+      email: "",
+      password: "",
+    });
+    setTimeout(() => {
+      router.push("/chat");
+    }, 1000);
+  };
+
   const handleImages = (e) => {
     const file = e.target.files[0];
     console.log(file);
     uploadImage(file);
   };
-
   const uploadImage = (file) => {
     const storage = getStorage();
 
@@ -87,6 +102,7 @@ const signup = () => {
       }
     );
   };
+
   return (
     <>
       <main className="form">
@@ -132,12 +148,21 @@ const signup = () => {
               </Link>
             </p>
           </div>
-          <button type="submit">Submit</button>
 
-          <button className="google" onClick={() => google()}>
-            <i className="fab fa-google"></i> Continue With Google
-          </button>
+          {!currentUser && (
+            <button className="submit" type="submit">
+              Submit
+            </button>
+          )}
         </form>
+        {currentUser && (
+          <button className="submit" onClick={updateUserProfile}>
+            Continue
+          </button>
+        )}
+        <button type="normal" className="google" onClick={() => google()}>
+          <i className="fab fa-google"></i> Continue With Google
+        </button>
       </main>
     </>
   );

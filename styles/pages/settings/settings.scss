@@ -1,0 +1,33 @@
+@import "../../utils/mixins/flex";
+@import "../../utils/varialbles/colors";
+@import "../../utils/mixins/button";
+@import "../../utils/varialbles/fonts";
+@import "../../utils/varialbles/border";
+
+.settings {
+  width: 800px;
+  margin: 30px auto;
+  height: 90vh;
+  //   @include flex($direc: column, $content: space-between, $items: flex-start);
+
+  div {
+    width: 100%;
+    border: 1px solid white;
+    margin: 20px 0px 50px;
+  }
+  h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  p {
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: 500;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  p:hover {
+    background-color: rgba(255, 255, 255, 0.247);
+    border-radius: $reduce-md;
+  }
+}

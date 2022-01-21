@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { useAuth } from "../Firebase/Context";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
   const { currentUser } = useAuth();
-
-  console.log(currentUser);
+  const router = useRouter();
+  useEffect(() => {
+    currentUser ? router.push("/chat") : null;
+  });
   return (
     <>
       <header>
@@ -18,9 +22,15 @@ export default function Home() {
           <br /> Chowury
         </h1>
         <h2>Welcome To My Chat Application</h2>
-        <Link href={`/signup`}>
-          <button>Sign Up</button>
-        </Link>
+        {!currentUser ? (
+          <Link href={`/signup`}>
+            <button>Sign Up</button>
+          </Link>
+        ) : (
+          <Link href={`/chat`}>
+            <button>Continue</button>
+          </Link>
+        )}
       </header>
     </>
   );
