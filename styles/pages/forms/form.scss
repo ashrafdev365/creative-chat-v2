@@ -2,6 +2,8 @@
 @import "../../utils/varialbles/colors";
 @import "../../utils/mixins/button";
 @import "../../utils/varialbles/fonts";
+@import "../../utils/mixins/buttonHover";
+
 .form {
   width: 100vw;
   height: 100vh;
@@ -75,6 +77,9 @@
       $border: 3px solid white
     );
   }
+  .google:hover {
+    @include hover($back: white, $color: $body);
+  }
 }
 .submit {
   @include button($pad: 7px 50px);
@@ -83,4 +88,7 @@
     font-size: 20px;
     margin-right: 10px;
   }
+}
+.submit:hover {
+  @include hover();
 }

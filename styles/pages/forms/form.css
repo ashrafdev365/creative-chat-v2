@@ -133,6 +133,13 @@
   border: 3px solid white;
 }
 
+.form .google:hover {
+  background-color: white;
+  color: #111111;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .submit {
   padding: 7px 50px;
   background-color: #46b2ff9c;
@@ -151,5 +158,12 @@
 .submit i {
   font-size: 20px;
   margin-right: 10px;
+}
+
+.submit:hover {
+  background-color: #46b2ff;
+  color: white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 /*# sourceMappingURL=form.css.map */

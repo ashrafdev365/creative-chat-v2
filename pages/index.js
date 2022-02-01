@@ -6,9 +6,9 @@ import { useEffect } from "react";
 export default function Home() {
   const { currentUser } = useAuth();
   const router = useRouter();
-  useEffect(() => {
-    currentUser ? router.push("/chat") : null;
-  });
+  // useEffect(() => {
+  //   currentUser ? router.push("/chat") : null;
+  // });
   return (
     <>
       <header>

@@ -1,0 +1,41 @@
+.aleart_div {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -0px);
+  animation: aleart 1s;
+  p {
+    font-size: 18px;
+    color: white;
+    margin-right: 18px;
+    font-weight: 500;
+  }
+  span {
+    padding: 7px 12px;
+    border-radius: 50%;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  span:hover {
+    background-color: rgba(0, 0, 0, 0.295);
+  }
+  i {
+    font-size: 18px;
+    color: white;
+  }
+}
+@keyframes aleart {
+  0% {
+    top: 0px;
+  }
+//   50% {
+//     top: 50px;
+//   } 
+  100% {
+    top: 30px;
+  }
+}

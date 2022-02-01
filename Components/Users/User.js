@@ -1,22 +1,14 @@
 import { useAuth } from "../../Firebase/Context";
 import { useState, useEffect } from "react";
-import { db } from "../../Firebase/firebase";
-import { onSnapshot, doc, collection, query } from "firebase/firestore";
 import Link from "next/link";
 import { useRouter } from "next/router";
-const User = () => {
-  const { currentUser } = useAuth();
-  const [data, setdata] = useState([]);
-  const router = useRouter();
-  useEffect(() => {
-    const q = query(collection(db, "userInfo"));
-    const userData = onSnapshot(q, (snapshot) => {
-      setdata(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    });
+import { userData } from "../../Firebase/UserContext";
 
-    return userData;
-  }, []);
-  console.log(data);
+const User = () => {
+  const [search, setsearch] = useState("");
+  const { currentUser } = useAuth();
+  const { data } = userData();
+  const router = useRouter();
   useEffect(() => {
     !currentUser ? router.push("/") : null;
   });
@@ -36,12 +28,19 @@ const User = () => {
         <span>
           <i className="far fa-search"></i>
         </span>
-        <input type="search" placeholder="Search User" />
+        <input
+          type="search"
+          placeholder="Search User"
+          onChange={(e) => setsearch(e.target.value)}
+        />
       </div>
       <main className="users_section">
         {data
           .filter((value) => {
             return value?.id != currentUser?.email;
+          })
+          .filter((value) => {
+            return value?.name.toLowerCase().includes(search.toLowerCase());
           })
           .map((val) => {
             return (

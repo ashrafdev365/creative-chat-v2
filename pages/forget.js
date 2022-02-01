@@ -2,46 +2,46 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useAuth } from "../Firebase/Context";
 import { useRouter } from "next/router";
-const login = () => {
-  const [input, setinput] = useState({
-    email: "",
-  });
+import { Succes, Wrong } from "../Components/Boxes/AleartBox";
+
+const forget = () => {
+  const [input, setinput] = useState("");
+  const [box, setbox] = useState(false);
+  const [filed_aleart, setfiled_aleart] = useState("");
   const { forgrt, currentUser } = useAuth();
   const router = useRouter();
   useEffect(() => {
     currentUser ? router.push("/") : null;
   });
 
-  let value, name;
-  const handleData = (e) => {
-    name = e.target.name;
-    value = e.target.value;
-    setinput({ ...input, [name]: value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email } = input;
-    if (!email) {
-      return alert("fill up");
+
+    if (!input) {
+      return setbox(true);
     } else {
-      await forgrt(email);
-      setinput({
-        email: "",
-      });
+      try {
+        await forgrt(input);
+        setfiled_aleart("Please Check Your Inbox");
+        setbox(true);
+        setinput("");
+      } catch (error) {
+        console.log(error.code);
+      }
     }
   };
 
   return (
     <>
+      <Wrong name="Please Type You Email" setbox={setbox} box={box} />
       <main className="form">
         <h1>forget</h1>
 
         <form action="" onSubmit={handleSubmit}>
           <input
             type="email"
-            value={input.email}
-            onChange={handleData}
+            value={input}
+            onChange={(e) => setinput(e.target.value)}
             placeholder="Email"
             name="email"
           />
@@ -60,11 +60,13 @@ const login = () => {
               </Link>
             </p>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="submit">
+            Submit
+          </button>
         </form>
       </main>
     </>
   );
 };
 
-export default login;
+export default forget;

@@ -4,6 +4,7 @@ import "../styles/pages/forms/form.css";
 import "../styles/pages/users/user.css";
 import "../styles/pages/chat/chat.css";
 import "../styles/pages/settings/settings.css";
+import '../styles/components/components.css';
 
 import AuthContextProvider from "../Firebase/Context";
 import UserDataProvider from "../Firebase/UserContext";

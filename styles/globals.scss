@@ -25,14 +25,14 @@ h1 {
   color: $font;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
+::-webkit-scrollbar {
+  width: 5px;
 }
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: transparent;
 }
-body::-webkit-scrollbar-thumb {
-  background: #cacaca; 
+::-webkit-scrollbar-thumb {
+  background: #cacaca2a; 
   border-radius: 10px;
 }
 

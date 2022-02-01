@@ -1,0 +1,5 @@
+@mixin hover($back: #46b2ff, $color: white) {
+  background-color: $back;
+  color: $color;
+  transform: scale(1.1);
+}

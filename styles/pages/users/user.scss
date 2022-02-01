@@ -3,6 +3,7 @@
 @import "../../utils/mixins/button";
 @import "../../utils/varialbles/fonts";
 @import "../../utils/varialbles/border";
+@import "../../utils/mixins/buttonHover";
 .user_nav {
   @include flex($content: space-between);
   width: 90%;
@@ -24,6 +25,9 @@
   button {
     @include button();
     text-transform: uppercase;
+  }
+  button:hover {
+    @include hover();
   }
 }
 .search {
@@ -70,6 +74,7 @@
     margin: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.363);
     align-items: center;
+    transition-duration: 0.7s;
     div {
       margin-left: 20px;
       width: 100%;
@@ -93,4 +98,207 @@
       margin: 10px 10px 0px 0px;
     }
   }
+
+}
+
+@media screen and (max-width: 750px) {
+  .user_nav {
+    @include flex($content: space-between);
+    width: 90%;
+    height: 100px;
+    margin: 10px auto 0;
+    .user_info {
+      @include flex($content: space-between);
+      h1 {
+        font-size: 28px;
+        margin-left: 10px;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    button {
+      @include button($size: $pera-sm);
+      text-transform: uppercase;
+    }
+    button:hover {
+      @include hover();
+    }
+  }
+  .search {
+    width: 90%;
+    margin: 5px auto 50px;
+    position: relative;
+    span {
+      background-color: #ffffffbe;
+      border: 2px solid #ffffff;
+      padding: 4px 7px;
+      border-radius: $reduce-md;
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      i {
+        font-size: 1rem;
+        color: $body;
+        font-weight: 600;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 9px 54px;
+      font-size: 18px;
+      background-color: #41b0ff96;
+      border: 3px solid #41b0ff;
+      border-radius: $reduce-md;
+      color: $font;
+      font-weight: 500;
+    }
+    input::placeholder {
+      color: $font;
+    }
+  }
+  
+  .users_section {
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+    overflow-y: auto;
+    .user {
+      display: flex;
+      padding: 15px 0;
+      margin: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.363);
+      align-items: center;
+      transition-duration: 0.7s;
+      div {
+        margin-left: 20px;
+        width: 100%;
+        h2 {
+          text-transform: capitalize;
+          font-size: 24px;
+          color: $font;
+          font-weight: 500;
+        }
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      i {
+        float: right;
+        font-size: 1.2rem;
+        color: $font;
+        margin: 10px 10px 0px 0px;
+      }
+    }
+  
+  }
+  
+}
+
+
+@media screen and (max-width: 450px) {
+  .user_nav {
+    @include flex($content: space-between);
+    width: 95%;
+    height: 80px;
+    margin: 10px auto 0;
+    .user_info {
+      @include flex($content: space-between);
+      h1 {
+        font-size: 20px;
+        margin-left: 10px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    button {
+      @include button($size: $pera-vsm, $pad: 7px 20px);
+      text-transform: uppercase;
+    }
+    button:hover {
+      @include hover();
+    }
+  }
+  .search {
+    width: 95%;
+    margin: 5px auto 20px;
+    position: relative;
+    span {
+      background-color: #ffffffbe;
+      border: 2px solid #ffffff;
+      padding: 1px 6px;
+      border-radius: $reduce-md;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      i {
+        font-size: 0.8rem;
+        color: $body;
+        margin-bottom: 3px;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 9px 44px;
+      font-size: 18px;
+      background-color: #41b0ff96;
+      border: 3px solid #41b0ff;
+      border-radius: $reduce-md;
+      color: $font;
+      font-weight: 500;
+      font-size: $pera-md;
+    }
+    input::placeholder {
+      color: $font;
+    }
+  }
+  
+  .users_section {
+    width: 95%;
+    margin: 0 auto;
+    cursor: pointer;
+    overflow-y: auto;
+    .user {
+      display: flex;
+      padding: 15px 0;
+      margin: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.363);
+      align-items: center;
+      transition-duration: 0.7s;
+      div {
+        margin-left: 12px;
+        width: 100%;
+        h2 {
+          text-transform: capitalize;
+          font-size: 20px;
+          color: $font;
+          font-weight: 500;
+        }
+      }
+      img {
+        width:40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      i {
+        float: right;
+        font-size: 1.2rem;
+        color: $font;
+        margin: 10px 10px 0px 0px;
+      }
+    }
+  
+  }
+  
 }

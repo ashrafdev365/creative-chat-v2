@@ -3,11 +3,16 @@ import { useState, useEffect } from "react";
 import { db } from "../Firebase/firebase";
 import { useAuth } from "../Firebase/Context";
 import { useRouter } from "next/router";
+import { Succes, Wrong } from "../Components/Boxes/AleartBox";
+
 const login = () => {
   const [input, setinput] = useState({
     email: "",
     password: "",
   });
+  const [box, setbox] = useState(false);
+  const [filed_aleart, setfiled_aleart] = useState("");
+  const [success, setsuccess] = useState(false);
   const { login, google, currentUser } = useAuth();
   const router = useRouter();
 
@@ -26,18 +31,39 @@ const login = () => {
     e.preventDefault();
     const { email, password } = input;
     if (!email || !password) {
-      return alert("fill up");
+      setfiled_aleart("Please Fillup All Fileds");
+      setbox(true);
     } else {
-      await login(email, password);
-      setinput({
-        email: "",
-        password: "",
-      });
+      try {
+        await login(email, password);
+        setsuccess(true);
+        setinput({
+          email: "",
+          password: "",
+        });
+      } catch (error) {
+        switch (error.code) {
+          case "auth/user-not-found":
+            setbox(true);
+            setfiled_aleart("Your Email Is Not Exist");
+            break;
+          case "auth/wrong-password":
+            setbox(true);
+            setfiled_aleart("Password Not Mached");
+            break;
+        }
+      }
     }
   };
 
   return (
     <>
+      <Wrong name={filed_aleart} setbox={setbox} box={box} />
+      <Succes
+        name="Your Account Created Successfully Click The Continue "
+        box={success}
+        setbox={setsuccess}
+      />
       <main className="form">
         <h1>Log In</h1>
 
@@ -58,7 +84,7 @@ const login = () => {
           />
           <div>
             <p>
-              Have an Account:
+              Create Account:{" "}
               <Link href="/signup">
                 <span>Log in</span>
               </Link>
@@ -67,10 +93,8 @@ const login = () => {
               <Link href="/forget">Forget Password!</Link>
             </p>
           </div>
-          <button type="submit">Submit</button>
-
-          <button className="google" onClick={() => google()}>
-            <i className="fab fa-google"></i> Continue With Google
+          <button type="submit" className="submit">
+            Submit
           </button>
         </form>
       </main>
