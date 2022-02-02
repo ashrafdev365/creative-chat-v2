@@ -31,3 +31,63 @@
     border-radius: $reduce-md;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .settings {
+    width: 400px;
+    margin: 30px auto;
+    height: 90vh;
+    //   @include flex($direc: column, $content: space-between, $items: flex-start);
+
+    div {
+      width: 100%;
+      border: 1px solid white;
+      margin: 20px 0px 50px;
+    }
+    h1 {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    p {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      transition-duration: 0.5s;
+      cursor: pointer;
+    }
+    p:hover {
+      background-color: rgba(255, 255, 255, 0.247);
+      border-radius: $reduce-md;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .settings {
+    width: 95%;
+    margin: 30px auto;
+    height: 90vh;
+    //   @include flex($direc: column, $content: space-between, $items: flex-start);
+
+    div {
+      width: 100%;
+      border: 1px solid white;
+      margin: 20px 0px 50px;
+    }
+    h1 {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    p {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      transition-duration: 0.5s;
+      cursor: pointer;
+    }
+    p:hover {
+      background-color: rgba(255, 255, 255, 0.247);
+      border-radius: $reduce-md;
+    }
+  }
+}

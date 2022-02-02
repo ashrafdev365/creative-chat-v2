@@ -19,7 +19,7 @@ header {
       top: -50px;
       left: -60px;
       transform: rotate(45deg);
-      // animation: image 14s 5s ease-in-out infinite;
+      animation: image 14s 5s ease-in-out infinite;
       z-index: -1;
     }
     .style2 {
@@ -29,7 +29,7 @@ header {
       position: absolute;
       top: -50px;
       left: -60px;
-      // animation: image 18s 5s ease infinite;
+      animation: image 18s 5s ease infinite;
       z-index: -1;
     }
     @keyframes image {

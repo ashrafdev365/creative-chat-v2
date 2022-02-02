@@ -9,6 +9,14 @@ export default function Home() {
   // useEffect(() => {
   //   currentUser ? router.push("/chat") : null;
   // });
+
+  useEffect(() => {
+    navigator.onLine ? console.log("yes") : console.log("no");
+  }, []);
+
+  // const handle = () => {
+
+  // };
   return (
     <>
       <header>

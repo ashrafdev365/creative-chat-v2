@@ -31,6 +31,8 @@ header .main_image_div .style1 {
   left: -60px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  -webkit-animation: image 14s 5s ease-in-out infinite;
+          animation: image 14s 5s ease-in-out infinite;
   z-index: -1;
 }
 
@@ -41,6 +43,8 @@ header .main_image_div .style2 {
   position: absolute;
   top: -50px;
   left: -60px;
+  -webkit-animation: image 18s 5s ease infinite;
+          animation: image 18s 5s ease infinite;
   z-index: -1;
 }
 
