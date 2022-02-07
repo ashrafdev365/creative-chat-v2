@@ -79,7 +79,6 @@ const chat = () => {
     const userData = onSnapshot(q, (snapshot) => {
       setmessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     });
-    autoScroll();
   }, []);
 
   //submit data
@@ -98,20 +97,7 @@ const chat = () => {
       });
       setinput("");
       setimage("");
-      autoScroll();
     }
-  };
-
-  const autoScroll = () => {
-    // console.log(scroll.current.scrollTo(0, 0));
-    // scroll.current.scrollTo(-1, -1)
-    // return scroll.current
-    return scroll.current.scrollIntoView({
-      block: "end",
-      inline: "end",
-      behavior: "smooth",
-    });
-    //    {block: "end", inline: "nearest",  behavior: "smooth"}
   };
 
   //get the image info
@@ -222,7 +208,6 @@ const chat = () => {
               </div>
             );
           })}
-          <div ref={scroll}> </div>
         </section>
         {/**/}
         <form className="messsage_div" onSubmit={handleSubmit}>
