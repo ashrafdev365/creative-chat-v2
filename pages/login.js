@@ -86,7 +86,7 @@ const login = () => {
             <p>
               Create Account:{" "}
               <Link href="/signup">
-                <span>Log in</span>
+                <span>Sign Up</span>
               </Link>
             </p>
             <p>

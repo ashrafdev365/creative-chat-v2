@@ -9,6 +9,7 @@
   @include flex($content: space-between);
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   aside {
     width: 700px;
     height: 100vh;
@@ -23,6 +24,13 @@
     nav {
       width: 90%;
       margin: 0px auto;
+      @include flex($content: flex-start);
+      i {
+        font-size: 2.5rem;
+        color: $font;
+        margin-right: 35px;
+        cursor: pointer;
+      }
       div {
         @include flex($content: flex-start);
         // border: 1px solid purple;
@@ -63,9 +71,9 @@
         p {
           color: $body;
           font-weight: 500;
-          font-size: 20px;
+          font-size: 18px;
           padding: 10px 25px;
-          margin: 0px 0 50px;
+          margin: 0px 0 40px;
           background-color: $font;
           float: left;
           clear: both;
@@ -86,9 +94,9 @@
         p {
           color: white;
           font-weight: 500;
-          font-size: 20px;
-          padding: 10px 25px;
-          margin: 0px 0 50px;
+          font-size: 18px;
+          padding: 8px 25px;
+          margin: 0px 0 40px;
           background-color: $button;
           float: right;
           clear: both;
@@ -156,26 +164,29 @@
   }
 }
 
-
 @media screen and (max-width: 1050px) {
   .chat_section {
     @include flex($content: center);
     height: 100vh;
     width: 100vw;
-  
+
     .user_chat_section {
       width: 90%;
       height: 100vh;
       // border: 5px solid purple;
-  
+
       nav {
         width: 100%;
         margin: 0px auto;
+        i {
+          font-size: 2rem;
+          margin-right: 30px;
+        }
         div {
           @include flex($content: flex-start);
           // border: 1px solid purple;
           height: 70px;
-  
+
           img {
             width: 50px;
             height: 50px;
@@ -189,7 +200,7 @@
           }
         }
       }
-  
+
       .user_chats {
         width: 100%;
         height: 83vh;
@@ -244,7 +255,7 @@
           }
         }
       }
-  
+
       .messsage_div {
         width: 100%;
         margin: 0px auto;
@@ -285,7 +296,7 @@
             color: $font;
           }
         }
-  
+
         button {
           @include button($pad: 10px 30px);
           text-transform: uppercase;
@@ -303,28 +314,29 @@
   }
 }
 
-
-
-
 @media screen and (max-width: 750px) {
   .chat_section {
     @include flex($content: center);
     height: 100vh;
     width: 100vw;
-  
+
     .user_chat_section {
       width: 90%;
       height: 100vh;
       // border: 5px solid purple;
-  
+
       nav {
         width: 100%;
         margin: 0px auto;
+        i {
+          font-size: 1.6rem;
+          margin-right: 30px;
+        }
         div {
           @include flex($content: flex-start);
           // border: 1px solid purple;
           height: 70px;
-  
+
           img {
             width: 45px;
             height: 45px;
@@ -338,7 +350,7 @@
           }
         }
       }
-  
+
       .user_chats {
         width: 100%;
         height: 83vh;
@@ -393,7 +405,7 @@
           }
         }
       }
-  
+
       .messsage_div {
         width: 100%;
         margin: 0px auto;
@@ -434,7 +446,7 @@
             color: $font;
           }
         }
-  
+
         button {
           @include button($pad: 10px 30px);
           text-transform: uppercase;
@@ -452,26 +464,29 @@
   }
 }
 
-
 @media screen and (max-width: 450px) {
   .chat_section {
     @include flex($content: center);
     height: 100vh;
     width: 100vw;
-  
+
     .user_chat_section {
       width: 95%;
       height: 100vh;
       // border: 5px solid purple;
-  
+
       nav {
         width: 100%;
         margin: 0px auto;
+        i {
+          font-size: 1.2rem;
+          margin-right: 22px;
+        }
         div {
           @include flex($content: flex-start);
           // border: 1px solid purple;
           height: 60px;
-  
+
           img {
             width: 40px;
             height: 40px;
@@ -485,7 +500,7 @@
           }
         }
       }
-  
+
       .user_chats {
         width: 100%;
         height: 80vh;
@@ -540,7 +555,7 @@
           }
         }
       }
-  
+
       .messsage_div {
         width: 100%;
         margin: 0px auto;
@@ -581,7 +596,7 @@
             color: $font;
           }
         }
-  
+
         button {
           @include button($pad: 9px 20px, $size: $pera-sm);
           text-transform: uppercase;
@@ -590,7 +605,6 @@
           color: $body;
           font-weight: bold;
           margin-left: 10px;
-          
         }
         button:hover {
           @include hover($back: white, $color: $body);

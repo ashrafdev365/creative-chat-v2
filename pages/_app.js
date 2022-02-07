@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous"
         />
+        <link rel="./ma"></link>
       </Head>
       <AuthContextProvider>
         <UserDataProvider>

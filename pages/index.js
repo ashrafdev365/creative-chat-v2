@@ -1,22 +1,19 @@
 import Link from "next/link";
 import { useAuth } from "../Firebase/Context";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 export default function Home() {
   const { currentUser } = useAuth();
   const router = useRouter();
+  useLayoutEffect(() => {
+    currentUser ? router.push("/chat") : null;
+  });
+
   // useEffect(() => {
-  //   currentUser ? router.push("/chat") : null;
-  // });
+  //   navigator.onLine ? console.log("yes") : console.log("no");
+  // }, []);
 
-  useEffect(() => {
-    navigator.onLine ? console.log("yes") : console.log("no");
-  }, []);
-
-  // const handle = () => {
-
-  // };
   return (
     <>
       <header>

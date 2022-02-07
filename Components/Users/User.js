@@ -21,7 +21,7 @@ const User = () => {
           <h1>{currentUser?.displayName}</h1>
         </div>
         <Link href="/settings">
-          <button>Settings</button>
+          <button className="settings_btn">Settings</button>
         </Link>
       </nav>
       <div className="search">
@@ -49,7 +49,6 @@ const User = () => {
                   <img src={val?.photo} alt="" />
                   <div>
                     <h2>{val?.name}</h2>
-                    <p>You: How Are you</p>
                   </div>
                   <i className="far fa-ellipsis-v"></i>
                 </div>

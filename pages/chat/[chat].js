@@ -1,6 +1,6 @@
 import User from "../../Components/Users/User";
 import { useAuth } from "../../Firebase/Context";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { userData } from "../../Firebase/UserContext";
@@ -32,10 +32,12 @@ const chat = () => {
   const [message, setmessage] = useState([]);
   const [input, setinput] = useState("");
   const [image, setimage] = useState("");
+  const [side, setside] = useState(true);
   const { currentUser } = useAuth();
   const { data } = userData();
   const router = useRouter();
   const { email, displayName } = currentUser;
+  const scroll = useRef();
 
   //filter chat user data
   const user = data
@@ -62,12 +64,14 @@ const chat = () => {
   });
 
   //check user are authenticated
-  useEffect(() => {
+  useLayoutEffect(() => {
     !currentUser ? router.push("/") : null;
+
+    window.innerWidth > 1050 ? setside(true) : setside(false);
   });
 
   ///get message data
-  useEffect(() => {
+  useLayoutEffect(() => {
     const q = query(
       collection(db, "message", `${myId?.uid + userId?.uid}`, "data"),
       orderBy("timestemp", "asc")
@@ -75,30 +79,39 @@ const chat = () => {
     const userData = onSnapshot(q, (snapshot) => {
       setmessage(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     });
+    autoScroll();
   }, []);
-
-  // useEffect(() => {
-
-  // }, []);
 
   //submit data
   const handleSubmit = async (e) => {
     e.preventDefault();
     const docId = myId?.uid + userId?.uid;
     const q = query(collection(db, "message", `${docId}`, "data"));
-    // if (!input) {
-    //   return console.log("please write something");
-    // } else {
-    await addDoc(q, {
-      img: image,
-      msg: input,
-      timestemp: serverTimestamp(),
-      uid: currentUser.uid,
-    });
+    if (!input) {
+      return console.log("Please write something");
+    } else {
+      await addDoc(q, {
+        img: image,
+        msg: input,
+        timestemp: serverTimestamp(),
+        uid: currentUser.uid,
+      });
+      setinput("");
+      setimage("");
+      autoScroll();
+    }
+  };
 
-    setinput("");
-    setimage("");
-    // }
+  const autoScroll = () => {
+    // console.log(scroll.current.scrollTo(0, 0));
+    // scroll.current.scrollTo(-1, -1)
+    // return scroll.current
+    return scroll.current.scrollIntoView({
+      block: "end",
+      inline: "end",
+      behavior: "smooth",
+    });
+    //    {block: "end", inline: "nearest",  behavior: "smooth"}
   };
 
   //get the image info
@@ -164,14 +177,16 @@ const chat = () => {
 
   return (
     <section className="chat_section">
-      {window.innerWidth > 1050 ? (
+      {side && (
         <aside className="chat_user_data">
           <User />
         </aside>
-      ) : null}
+      )}
 
       <main className="user_chat_section">
         <nav>
+          <i className="fas fa-chevron-left" onClick={() => router.back()}></i>
+
           {data
             .filter((value) => {
               return value.uid == router.query.chat;
@@ -207,8 +222,9 @@ const chat = () => {
               </div>
             );
           })}
+          <div ref={scroll}> </div>
         </section>
-
+        {/**/}
         <form className="messsage_div" onSubmit={handleSubmit}>
           <div>
             <i class="fas fa-images" id="image">

@@ -16,6 +16,7 @@
           flex-direction: row;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .chat_section aside {
@@ -33,6 +34,28 @@
 .chat_section .user_chat_section nav {
   width: 90%;
   margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.chat_section .user_chat_section nav i {
+  font-size: 2.5rem;
+  color: white;
+  margin-right: 35px;
+  cursor: pointer;
 }
 
 .chat_section .user_chat_section nav div {
@@ -91,9 +114,9 @@
 .chat_section .user_chat_section .user_chats .left_user p {
   color: #111111;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 25px;
-  margin: 0px 0 50px;
+  margin: 0px 0 40px;
   background-color: white;
   float: left;
   clear: both;
@@ -114,9 +137,9 @@
 .chat_section .user_chat_section .user_chats .right_user p {
   color: white;
   font-weight: 500;
-  font-size: 20px;
-  padding: 10px 25px;
-  margin: 0px 0 50px;
+  font-size: 18px;
+  padding: 8px 25px;
+  margin: 0px 0 40px;
   background-color: #41B0FF;
   float: right;
   clear: both;
@@ -254,6 +277,10 @@
   .chat_section .user_chat_section nav {
     width: 100%;
     margin: 0px auto;
+  }
+  .chat_section .user_chat_section nav i {
+    font-size: 2rem;
+    margin-right: 30px;
   }
   .chat_section .user_chat_section nav div {
     display: -webkit-box;
@@ -453,6 +480,10 @@
     width: 100%;
     margin: 0px auto;
   }
+  .chat_section .user_chat_section nav i {
+    font-size: 1.6rem;
+    margin-right: 30px;
+  }
   .chat_section .user_chat_section nav div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -650,6 +681,10 @@
   .chat_section .user_chat_section nav {
     width: 100%;
     margin: 0px auto;
+  }
+  .chat_section .user_chat_section nav i {
+    font-size: 1.2rem;
+    margin-right: 22px;
   }
   .chat_section .user_chat_section nav div {
     display: -webkit-box;
