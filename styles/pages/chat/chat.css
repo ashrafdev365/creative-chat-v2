@@ -1,37 +1,10 @@
-.chat_section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.user_chat_section {
+  width: 80%;
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  margin: 0px auto;
 }
 
-.chat_section aside {
-  width: 700px;
-  height: 100vh;
-  border-right: 1px solid rgba(255, 255, 255, 0.384);
-  border-radius: 6px;
-}
-
-.chat_section .user_chat_section {
-  width: 90%;
-  height: 100vh;
-}
-
-.chat_section .user_chat_section nav {
+.user_chat_section nav {
   width: 90%;
   margin: 0px auto;
   display: -webkit-box;
@@ -51,14 +24,14 @@
           flex-direction: row;
 }
 
-.chat_section .user_chat_section nav i {
+.user_chat_section nav i {
   font-size: 2.5rem;
   color: white;
   margin-right: 35px;
   cursor: pointer;
 }
 
-.chat_section .user_chat_section nav div {
+.user_chat_section nav div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,7 +50,7 @@
   height: 90px;
 }
 
-.chat_section .user_chat_section nav div img {
+.user_chat_section nav div img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -86,12 +59,12 @@
   margin-right: 10px;
 }
 
-.chat_section .user_chat_section nav div h1 {
+.user_chat_section nav div h1 {
   font-size: 38px;
   font-weight: 500;
 }
 
-.chat_section .user_chat_section .user_chats {
+.user_chat_section .user_chats {
   width: 90%;
   height: 80vh;
   margin: 10px auto;
@@ -100,7 +73,7 @@
   padding: 0px 20px;
 }
 
-.chat_section .user_chat_section .user_chats .left_user img {
+.user_chat_section .user_chats .left_user img {
   width: 400px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -111,7 +84,7 @@
   cursor: pointer;
 }
 
-.chat_section .user_chat_section .user_chats .left_user p {
+.user_chat_section .user_chats .left_user p {
   color: #111111;
   font-weight: 500;
   font-size: 18px;
@@ -121,9 +94,16 @@
   float: left;
   clear: both;
   border-radius: 10px 10px 10px 2px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
-.chat_section .user_chat_section .user_chats .right_user img {
+.user_chat_section .user_chats .left_user p:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.user_chat_section .user_chats .right_user img {
   width: 400px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -134,7 +114,7 @@
   cursor: pointer;
 }
 
-.chat_section .user_chat_section .user_chats .right_user p {
+.user_chat_section .user_chats .right_user p {
   color: white;
   font-weight: 500;
   font-size: 18px;
@@ -144,9 +124,16 @@
   float: right;
   clear: both;
   border-radius: 10px 10px 2px 10px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
-.chat_section .user_chat_section .messsage_div {
+.user_chat_section .user_chats .right_user p:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.user_chat_section .messsage_div {
   width: 90%;
   margin: 0px auto;
   display: -webkit-box;
@@ -166,12 +153,12 @@
           flex-direction: row;
 }
 
-.chat_section .user_chat_section .messsage_div div {
+.user_chat_section .messsage_div div {
   width: 90%;
   position: relative;
 }
 
-.chat_section .user_chat_section .messsage_div div i {
+.user_chat_section .messsage_div div i {
   position: absolute;
   font-size: 1.5rem;
   color: white;
@@ -181,22 +168,22 @@
   cursor: pointer;
 }
 
-.chat_section .user_chat_section .messsage_div div #image {
+.user_chat_section .messsage_div div #image {
   right: 68px;
 }
 
-.chat_section .user_chat_section .messsage_div div #image input {
+.user_chat_section .messsage_div div #image input {
   opacity: 0;
   cursor: pointer;
   -webkit-transform: translateY(-25px);
           transform: translateY(-25px);
 }
 
-.chat_section .user_chat_section .messsage_div div .fa-grin-beam {
+.user_chat_section .messsage_div div .fa-grin-beam {
   right: 15px;
 }
 
-.chat_section .user_chat_section .messsage_div div .message {
+.user_chat_section .messsage_div div .message {
   width: 100%;
   font-size: 18px;
   padding: 10px 110px 10px 20px;
@@ -207,23 +194,23 @@
   font-weight: 500;
 }
 
-.chat_section .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
+.user_chat_section .messsage_div div .message::-webkit-input-placeholder {
   color: white;
 }
 
-.chat_section .user_chat_section .messsage_div div .message:-ms-input-placeholder {
+.user_chat_section .messsage_div div .message:-ms-input-placeholder {
   color: white;
 }
 
-.chat_section .user_chat_section .messsage_div div .message::-ms-input-placeholder {
+.user_chat_section .messsage_div div .message::-ms-input-placeholder {
   color: white;
 }
 
-.chat_section .user_chat_section .messsage_div div .message::placeholder {
+.user_chat_section .messsage_div div .message::placeholder {
   color: white;
 }
 
-.chat_section .user_chat_section .messsage_div button {
+.user_chat_section .messsage_div button {
   padding: 10px 30px;
   background-color: #46b2ff9c;
   color: white;
@@ -243,7 +230,7 @@
   margin-left: 10px;
 }
 
-.chat_section .user_chat_section .messsage_div button:hover {
+.user_chat_section .messsage_div button:hover {
   background-color: white;
   color: #111111;
   -webkit-transform: scale(1.1);
@@ -251,38 +238,19 @@
 }
 
 @media screen and (max-width: 1050px) {
-  .chat_section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-  }
-  .chat_section .user_chat_section {
+  .user_chat_section {
     width: 90%;
     height: 100vh;
   }
-  .chat_section .user_chat_section nav {
+  .user_chat_section nav {
     width: 100%;
     margin: 0px auto;
   }
-  .chat_section .user_chat_section nav i {
+  .user_chat_section nav i {
     font-size: 2rem;
     margin-right: 30px;
   }
-  .chat_section .user_chat_section nav div {
+  .user_chat_section nav div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -300,7 +268,7 @@
             flex-direction: row;
     height: 70px;
   }
-  .chat_section .user_chat_section nav div img {
+  .user_chat_section nav div img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -308,11 +276,11 @@
        object-fit: cover;
     margin-right: 10px;
   }
-  .chat_section .user_chat_section nav div h1 {
+  .user_chat_section nav div h1 {
     font-size: 32px;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .user_chats {
+  .user_chat_section .user_chats {
     width: 100%;
     height: 83vh;
     margin: 10px auto;
@@ -320,7 +288,7 @@
     word-break: break-all;
     padding: 0px 20px;
   }
-  .chat_section .user_chat_section .user_chats .left_user img {
+  .user_chat_section .user_chats .left_user img {
     width: 400px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -330,7 +298,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .left_user p {
+  .user_chat_section .user_chats .left_user p {
     color: #111111;
     font-weight: 500;
     font-size: 18px;
@@ -341,7 +309,7 @@
     clear: both;
     border-radius: 10px 10px 10px 2px;
   }
-  .chat_section .user_chat_section .user_chats .right_user img {
+  .user_chat_section .user_chats .right_user img {
     width: 400px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -351,7 +319,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .right_user p {
+  .user_chat_section .user_chats .right_user p {
     color: white;
     font-weight: 500;
     font-size: 18px;
@@ -362,7 +330,7 @@
     clear: both;
     border-radius: 10px 10px 2px 10px;
   }
-  .chat_section .user_chat_section .messsage_div {
+  .user_chat_section .messsage_div {
     width: 100%;
     margin: 0px auto;
     display: -webkit-box;
@@ -381,11 +349,11 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .chat_section .user_chat_section .messsage_div div {
+  .user_chat_section .messsage_div div {
     width: 100%;
     position: relative;
   }
-  .chat_section .user_chat_section .messsage_div div i {
+  .user_chat_section .messsage_div div i {
     position: absolute;
     font-size: 1.5rem;
     color: white;
@@ -394,16 +362,16 @@
     width: 30px;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .messsage_div div #image {
+  .user_chat_section .messsage_div div #image {
     right: 68px;
   }
-  .chat_section .user_chat_section .messsage_div div #image input {
+  .user_chat_section .messsage_div div #image input {
     opacity: 0;
   }
-  .chat_section .user_chat_section .messsage_div div .fa-grin-beam {
+  .user_chat_section .messsage_div div .fa-grin-beam {
     right: 15px;
   }
-  .chat_section .user_chat_section .messsage_div div .message {
+  .user_chat_section .messsage_div div .message {
     width: 100%;
     font-size: 18px;
     padding: 10px 110px 10px 20px;
@@ -413,19 +381,19 @@
     color: white;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
+  .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message:-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message:-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message::-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::placeholder {
+  .user_chat_section .messsage_div div .message::placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div button {
+  .user_chat_section .messsage_div button {
     padding: 10px 30px;
     background-color: #46b2ff9c;
     color: white;
@@ -444,7 +412,7 @@
     font-weight: bold;
     margin-left: 20px;
   }
-  .chat_section .user_chat_section .messsage_div button:hover {
+  .user_chat_section .messsage_div button:hover {
     background-color: white;
     color: #111111;
     -webkit-transform: scale(1.1);
@@ -453,38 +421,19 @@
 }
 
 @media screen and (max-width: 750px) {
-  .chat_section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-  }
-  .chat_section .user_chat_section {
+  .user_chat_section {
     width: 90%;
     height: 100vh;
   }
-  .chat_section .user_chat_section nav {
+  .user_chat_section nav {
     width: 100%;
     margin: 0px auto;
   }
-  .chat_section .user_chat_section nav i {
+  .user_chat_section nav i {
     font-size: 1.6rem;
     margin-right: 30px;
   }
-  .chat_section .user_chat_section nav div {
+  .user_chat_section nav div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -502,7 +451,7 @@
             flex-direction: row;
     height: 70px;
   }
-  .chat_section .user_chat_section nav div img {
+  .user_chat_section nav div img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -510,11 +459,11 @@
        object-fit: cover;
     margin-right: 10px;
   }
-  .chat_section .user_chat_section nav div h1 {
+  .user_chat_section nav div h1 {
     font-size: 28px;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .user_chats {
+  .user_chat_section .user_chats {
     width: 100%;
     height: 83vh;
     margin: 10px auto;
@@ -522,7 +471,7 @@
     word-break: break-all;
     padding: 0px 20px;
   }
-  .chat_section .user_chat_section .user_chats .left_user img {
+  .user_chat_section .user_chats .left_user img {
     width: 300px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -532,7 +481,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .left_user p {
+  .user_chat_section .user_chats .left_user p {
     color: #111111;
     font-weight: 500;
     font-size: 16px;
@@ -543,7 +492,7 @@
     clear: both;
     border-radius: 10px 10px 10px 2px;
   }
-  .chat_section .user_chat_section .user_chats .right_user img {
+  .user_chat_section .user_chats .right_user img {
     width: 300px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -553,7 +502,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .right_user p {
+  .user_chat_section .user_chats .right_user p {
     color: white;
     font-weight: 500;
     font-size: 16px;
@@ -564,7 +513,7 @@
     clear: both;
     border-radius: 10px 10px 2px 10px;
   }
-  .chat_section .user_chat_section .messsage_div {
+  .user_chat_section .messsage_div {
     width: 100%;
     margin: 0px auto;
     display: -webkit-box;
@@ -583,11 +532,11 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .chat_section .user_chat_section .messsage_div div {
+  .user_chat_section .messsage_div div {
     width: 100%;
     position: relative;
   }
-  .chat_section .user_chat_section .messsage_div div i {
+  .user_chat_section .messsage_div div i {
     position: absolute;
     font-size: 1.5rem;
     color: white;
@@ -596,16 +545,16 @@
     width: 30px;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .messsage_div div #image {
+  .user_chat_section .messsage_div div #image {
     right: 68px;
   }
-  .chat_section .user_chat_section .messsage_div div #image input {
+  .user_chat_section .messsage_div div #image input {
     opacity: 0;
   }
-  .chat_section .user_chat_section .messsage_div div .fa-grin-beam {
+  .user_chat_section .messsage_div div .fa-grin-beam {
     right: 15px;
   }
-  .chat_section .user_chat_section .messsage_div div .message {
+  .user_chat_section .messsage_div div .message {
     width: 100%;
     font-size: 18px;
     padding: 10px 110px 10px 20px;
@@ -615,19 +564,19 @@
     color: white;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
+  .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message:-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message:-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message::-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::placeholder {
+  .user_chat_section .messsage_div div .message::placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div button {
+  .user_chat_section .messsage_div button {
     padding: 10px 30px;
     background-color: #46b2ff9c;
     color: white;
@@ -646,7 +595,7 @@
     font-weight: bold;
     margin-left: 20px;
   }
-  .chat_section .user_chat_section .messsage_div button:hover {
+  .user_chat_section .messsage_div button:hover {
     background-color: white;
     color: #111111;
     -webkit-transform: scale(1.1);
@@ -655,38 +604,19 @@
 }
 
 @media screen and (max-width: 450px) {
-  .chat_section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-  }
-  .chat_section .user_chat_section {
+  .user_chat_section {
     width: 95%;
     height: 100vh;
   }
-  .chat_section .user_chat_section nav {
+  .user_chat_section nav {
     width: 100%;
     margin: 0px auto;
   }
-  .chat_section .user_chat_section nav i {
+  .user_chat_section nav i {
     font-size: 1.2rem;
     margin-right: 22px;
   }
-  .chat_section .user_chat_section nav div {
+  .user_chat_section nav div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -704,7 +634,7 @@
             flex-direction: row;
     height: 60px;
   }
-  .chat_section .user_chat_section nav div img {
+  .user_chat_section nav div img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -712,11 +642,11 @@
        object-fit: cover;
     margin-right: 10px;
   }
-  .chat_section .user_chat_section nav div h1 {
+  .user_chat_section nav div h1 {
     font-size: 24px;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .user_chats {
+  .user_chat_section .user_chats {
     width: 100%;
     height: 80vh;
     margin: 10px auto;
@@ -724,7 +654,7 @@
     word-break: break-all;
     padding: 0px 20px;
   }
-  .chat_section .user_chat_section .user_chats .left_user img {
+  .user_chat_section .user_chats .left_user img {
     width: 200px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -734,7 +664,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .left_user p {
+  .user_chat_section .user_chats .left_user p {
     color: #111111;
     font-weight: 500;
     font-size: 14px;
@@ -745,7 +675,7 @@
     clear: both;
     border-radius: 6px 6px 6px 2px;
   }
-  .chat_section .user_chat_section .user_chats .right_user img {
+  .user_chat_section .user_chats .right_user img {
     width: 200px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -755,7 +685,7 @@
     clear: both;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .user_chats .right_user p {
+  .user_chat_section .user_chats .right_user p {
     color: white;
     font-weight: 500;
     font-size: 14px;
@@ -766,7 +696,7 @@
     clear: both;
     border-radius: 6px 6px 2px 6px;
   }
-  .chat_section .user_chat_section .messsage_div {
+  .user_chat_section .messsage_div {
     width: 100%;
     margin: 0px auto;
     display: -webkit-box;
@@ -785,11 +715,11 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .chat_section .user_chat_section .messsage_div div {
+  .user_chat_section .messsage_div div {
     width: 100%;
     position: relative;
   }
-  .chat_section .user_chat_section .messsage_div div i {
+  .user_chat_section .messsage_div div i {
     position: absolute;
     font-size: 1.2rem;
     color: white;
@@ -798,16 +728,16 @@
     width: 30px;
     cursor: pointer;
   }
-  .chat_section .user_chat_section .messsage_div div #image {
+  .user_chat_section .messsage_div div #image {
     right: 48px;
   }
-  .chat_section .user_chat_section .messsage_div div #image input {
+  .user_chat_section .messsage_div div #image input {
     opacity: 0;
   }
-  .chat_section .user_chat_section .messsage_div div .fa-grin-beam {
+  .user_chat_section .messsage_div div .fa-grin-beam {
     right: 6px;
   }
-  .chat_section .user_chat_section .messsage_div div .message {
+  .user_chat_section .messsage_div div .message {
     width: 100%;
     font-size: 14px;
     padding: 10px 85px 10px 10px;
@@ -817,19 +747,19 @@
     color: white;
     font-weight: 500;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
+  .user_chat_section .messsage_div div .message::-webkit-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message:-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message:-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::-ms-input-placeholder {
+  .user_chat_section .messsage_div div .message::-ms-input-placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div div .message::placeholder {
+  .user_chat_section .messsage_div div .message::placeholder {
     color: white;
   }
-  .chat_section .user_chat_section .messsage_div button {
+  .user_chat_section .messsage_div button {
     padding: 9px 20px;
     background-color: #46b2ff9c;
     color: white;
@@ -848,7 +778,7 @@
     font-weight: bold;
     margin-left: 10px;
   }
-  .chat_section .user_chat_section .messsage_div button:hover {
+  .user_chat_section .messsage_div button:hover {
     background-color: white;
     color: #111111;
     -webkit-transform: scale(1.1);

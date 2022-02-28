@@ -5,54 +5,197 @@
 @import "../../utils/varialbles/border";
 @import "../../utils/mixins/buttonHover";
 
-.chat_section {
-  @include flex($content: space-between);
+
+.user_chat_section {
+  width: 80%;
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  aside {
-    width: 700px;
-    height: 100vh;
-    border-right: 1px solid rgba(255, 255, 255, 0.384);
-    border-radius: $reduce-md;
+  // border: 5px solid purple;
+  margin: 0px auto;
+  nav {
+    width: 90%;
+    margin: 0px auto;
+    @include flex($content: flex-start);
+    i {
+      font-size: 2.5rem;
+      color: $font;
+      margin-right: 35px;
+      cursor: pointer;
+    }
+    div {
+      @include flex($content: flex-start);
+      // border: 1px solid purple;
+      height: 90px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+      h1 {
+        font-size: 38px;
+        font-weight: 500;
+      }
+    }
   }
+
+  .user_chats {
+    width: 90%;
+    height: 80vh;
+    margin: 10px auto;
+    // border: 1px solid purple;
+    overflow-y: auto;
+    word-break: break-all;
+    padding: 0px 20px;
+    .left_user {
+      img {
+        width: 400px;
+        object-fit: cover;
+        border-radius: $reduce-md;
+        margin: 0px 0 50px;
+        float: left;
+        clear: both;
+        cursor: pointer;
+      }
+      p {
+        color: $body;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 10px 25px;
+        margin: 0px 0 40px;
+        background-color: $font;
+        float: left;
+        clear: both;
+        border-radius: 10px 10px 10px 2px;
+        transition-duration: 0.5s;
+      }
+      p:hover{
+        transform: scale(1.1);
+      }
+    }
+ 
+    .right_user {
+      img {
+        width: 400px;
+        object-fit: cover;
+        border-radius: $reduce-md;
+        margin: 0px 0 50px;
+        float: right;
+        clear: both;
+        cursor: pointer;
+      }
+      p {
+        color: white;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 8px 25px;
+        margin: 0px 0 40px;
+        background-color: $button;
+        float: right;
+        clear: both;
+        border-radius: 10px 10px 2px 10px;
+        transition-duration: 0.5s;
+      }
+      p:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .messsage_div {
+    width: 90%;
+    margin: 0px auto;
+    @include flex($content: space-between);
+    div {
+      width: 90%;
+      position: relative;
+      i {
+        position: absolute;
+        font-size: 1.5rem;
+        color: $font;
+        overflow: hidden;
+        top: 13px;
+        // border: 1px solid purple;
+        width: 30px;
+        cursor: pointer;
+      }
+      #image {
+        right: 68px;
+        input {
+          opacity: 0;
+          cursor: pointer;
+          transform: translateY(-25px);
+        }
+      }
+      .fa-grin-beam {
+        right: 15px;
+      }
+      .message {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px 110px 10px 20px;
+        background-color: #41b0ff96;
+        border: 3px solid #41b0ff;
+        border-radius: $reduce-md;
+        color: $font;
+        font-weight: 500;
+      }
+      .message::placeholder {
+        color: $font;
+      }
+    }
+
+    button {
+      @include button($pad: 10px 30px);
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.753);
+      border: 3px solid white;
+      color: $body;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    button:hover {
+      @include hover($back: white, $color: $body);
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
   .user_chat_section {
     width: 90%;
     height: 100vh;
     // border: 5px solid purple;
 
     nav {
-      width: 90%;
+      width: 100%;
       margin: 0px auto;
-      @include flex($content: flex-start);
       i {
-        font-size: 2.5rem;
-        color: $font;
-        margin-right: 35px;
-        cursor: pointer;
+        font-size: 2rem;
+        margin-right: 30px;
       }
       div {
         @include flex($content: flex-start);
         // border: 1px solid purple;
-        height: 90px;
+        height: 70px;
 
         img {
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           object-fit: cover;
           margin-right: 10px;
         }
         h1 {
-          font-size: 38px;
+          font-size: 32px;
           font-weight: 500;
         }
       }
     }
 
     .user_chats {
-      width: 90%;
-      height: 80vh;
+      width: 100%;
+      height: 83vh;
       margin: 10px auto;
       // border: 1px solid purple;
       overflow-y: auto;
@@ -73,7 +216,7 @@
           font-weight: 500;
           font-size: 18px;
           padding: 10px 25px;
-          margin: 0px 0 40px;
+          margin: 0px 0 50px;
           background-color: $font;
           float: left;
           clear: both;
@@ -95,8 +238,8 @@
           color: white;
           font-weight: 500;
           font-size: 18px;
-          padding: 8px 25px;
-          margin: 0px 0 40px;
+          padding: 10px 25px;
+          margin: 0px 0 50px;
           background-color: $button;
           float: right;
           clear: both;
@@ -106,11 +249,11 @@
     }
 
     .messsage_div {
-      width: 90%;
+      width: 100%;
       margin: 0px auto;
       @include flex($content: space-between);
       div {
-        width: 90%;
+        width: 100%;
         position: relative;
         i {
           position: absolute;
@@ -126,8 +269,6 @@
           right: 68px;
           input {
             opacity: 0;
-            cursor: pointer;
-            transform: translateY(-25px);
           }
         }
         .fa-grin-beam {
@@ -155,7 +296,7 @@
         border: 3px solid white;
         color: $body;
         font-weight: bold;
-        margin-left: 10px;
+        margin-left: 20px;
       }
       button:hover {
         @include hover($back: white, $color: $body);
@@ -164,451 +305,289 @@
   }
 }
 
-@media screen and (max-width: 1050px) {
-  .chat_section {
-    @include flex($content: center);
+@media screen and (max-width: 750px) {
+  .user_chat_section {
+    width: 90%;
     height: 100vh;
-    width: 100vw;
+    // border: 5px solid purple;
 
-    .user_chat_section {
-      width: 90%;
-      height: 100vh;
-      // border: 5px solid purple;
-
-      nav {
-        width: 100%;
-        margin: 0px auto;
-        i {
-          font-size: 2rem;
-          margin-right: 30px;
-        }
-        div {
-          @include flex($content: flex-start);
-          // border: 1px solid purple;
-          height: 70px;
-
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-          }
-          h1 {
-            font-size: 32px;
-            font-weight: 500;
-          }
-        }
+    nav {
+      width: 100%;
+      margin: 0px auto;
+      i {
+        font-size: 1.6rem;
+        margin-right: 30px;
       }
-
-      .user_chats {
-        width: 100%;
-        height: 83vh;
-        margin: 10px auto;
+      div {
+        @include flex($content: flex-start);
         // border: 1px solid purple;
-        overflow-y: auto;
-        word-break: break-all;
-        padding: 0px 20px;
-        .left_user {
-          img {
-            width: 400px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: left;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: $body;
-            font-weight: 500;
-            font-size: 18px;
-            padding: 10px 25px;
-            margin: 0px 0 50px;
-            background-color: $font;
-            float: left;
-            clear: both;
-            border-radius: 10px 10px 10px 2px;
-            // word-break: break-all;
-          }
-        }
-        .right_user {
-          img {
-            width: 400px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: right;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: white;
-            font-weight: 500;
-            font-size: 18px;
-            padding: 10px 25px;
-            margin: 0px 0 50px;
-            background-color: $button;
-            float: right;
-            clear: both;
-            border-radius: 10px 10px 2px 10px;
-          }
-        }
-      }
+        height: 70px;
 
-      .messsage_div {
-        width: 100%;
-        margin: 0px auto;
-        @include flex($content: space-between);
-        div {
-          width: 100%;
-          position: relative;
-          i {
-            position: absolute;
-            font-size: 1.5rem;
-            color: $font;
-            overflow: hidden;
-            top: 13px;
-            // border: 1px solid purple;
-            width: 30px;
-            cursor: pointer;
-          }
-          #image {
-            right: 68px;
-            input {
-              opacity: 0;
-            }
-          }
-          .fa-grin-beam {
-            right: 15px;
-          }
-          .message {
-            width: 100%;
-            font-size: 18px;
-            padding: 10px 110px 10px 20px;
-            background-color: #41b0ff96;
-            border: 3px solid #41b0ff;
-            border-radius: $reduce-md;
-            color: $font;
-            font-weight: 500;
-          }
-          .message::placeholder {
-            color: $font;
-          }
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
         }
-
-        button {
-          @include button($pad: 10px 30px);
-          text-transform: uppercase;
-          background-color: rgba(255, 255, 255, 0.753);
-          border: 3px solid white;
-          color: $body;
-          font-weight: bold;
-          margin-left: 20px;
-        }
-        button:hover {
-          @include hover($back: white, $color: $body);
+        h1 {
+          font-size: 28px;
+          font-weight: 500;
         }
       }
     }
-  }
-}
 
-@media screen and (max-width: 750px) {
-  .chat_section {
-    @include flex($content: center);
-    height: 100vh;
-    width: 100vw;
-
-    .user_chat_section {
-      width: 90%;
-      height: 100vh;
-      // border: 5px solid purple;
-
-      nav {
-        width: 100%;
-        margin: 0px auto;
-        i {
-          font-size: 1.6rem;
-          margin-right: 30px;
+    .user_chats {
+      width: 100%;
+      height: 83vh;
+      margin: 10px auto;
+      // border: 1px solid purple;
+      overflow-y: auto;
+      word-break: break-all;
+      padding: 0px 20px;
+      .left_user {
+        img {
+          width: 300px;
+          object-fit: cover;
+          border-radius: $reduce-md;
+          margin: 0px 0 50px;
+          float: left;
+          clear: both;
+          cursor: pointer;
         }
-        div {
-          @include flex($content: flex-start);
-          // border: 1px solid purple;
-          height: 70px;
-
-          img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-          }
-          h1 {
-            font-size: 28px;
-            font-weight: 500;
-          }
-        }
-      }
-
-      .user_chats {
-        width: 100%;
-        height: 83vh;
-        margin: 10px auto;
-        // border: 1px solid purple;
-        overflow-y: auto;
-        word-break: break-all;
-        padding: 0px 20px;
-        .left_user {
-          img {
-            width: 300px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: left;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: $body;
-            font-weight: 500;
-            font-size: 16px;
-            padding: 8px 20px;
-            margin: 0px 0 30px;
-            background-color: $font;
-            float: left;
-            clear: both;
-            border-radius: 10px 10px 10px 2px;
-            // word-break: break-all;
-          }
-        }
-        .right_user {
-          img {
-            width: 300px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: right;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: white;
-            font-weight: 500;
-            font-size: 16px;
-            padding: 8px 20px;
-            margin: 0px 0 30px;
-            background-color: $button;
-            float: right;
-            clear: both;
-            border-radius: 10px 10px 2px 10px;
-          }
-        }
-      }
-
-      .messsage_div {
-        width: 100%;
-        margin: 0px auto;
-        @include flex($content: space-between);
-        div {
-          width: 100%;
-          position: relative;
-          i {
-            position: absolute;
-            font-size: 1.5rem;
-            color: $font;
-            overflow: hidden;
-            top: 13px;
-            // border: 1px solid purple;
-            width: 30px;
-            cursor: pointer;
-          }
-          #image {
-            right: 68px;
-            input {
-              opacity: 0;
-            }
-          }
-          .fa-grin-beam {
-            right: 15px;
-          }
-          .message {
-            width: 100%;
-            font-size: 18px;
-            padding: 10px 110px 10px 20px;
-            background-color: #41b0ff96;
-            border: 3px solid #41b0ff;
-            border-radius: $reduce-md;
-            color: $font;
-            font-weight: 500;
-          }
-          .message::placeholder {
-            color: $font;
-          }
-        }
-
-        button {
-          @include button($pad: 10px 30px);
-          text-transform: uppercase;
-          background-color: rgba(255, 255, 255, 0.753);
-          border: 3px solid white;
+        p {
           color: $body;
-          font-weight: bold;
-          margin-left: 20px;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 8px 20px;
+          margin: 0px 0 30px;
+          background-color: $font;
+          float: left;
+          clear: both;
+          border-radius: 10px 10px 10px 2px;
+          // word-break: break-all;
         }
-        button:hover {
-          @include hover($back: white, $color: $body);
+      }
+      .right_user {
+        img {
+          width: 300px;
+          object-fit: cover;
+          border-radius: $reduce-md;
+          margin: 0px 0 50px;
+          float: right;
+          clear: both;
+          cursor: pointer;
         }
+        p {
+          color: white;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 8px 20px;
+          margin: 0px 0 30px;
+          background-color: $button;
+          float: right;
+          clear: both;
+          border-radius: 10px 10px 2px 10px;
+        }
+      }
+    }
+
+    .messsage_div {
+      width: 100%;
+      margin: 0px auto;
+      @include flex($content: space-between);
+      div {
+        width: 100%;
+        position: relative;
+        i {
+          position: absolute;
+          font-size: 1.5rem;
+          color: $font;
+          overflow: hidden;
+          top: 13px;
+          // border: 1px solid purple;
+          width: 30px;
+          cursor: pointer;
+        }
+        #image {
+          right: 68px;
+          input {
+            opacity: 0;
+          }
+        }
+        .fa-grin-beam {
+          right: 15px;
+        }
+        .message {
+          width: 100%;
+          font-size: 18px;
+          padding: 10px 110px 10px 20px;
+          background-color: #41b0ff96;
+          border: 3px solid #41b0ff;
+          border-radius: $reduce-md;
+          color: $font;
+          font-weight: 500;
+        }
+        .message::placeholder {
+          color: $font;
+        }
+      }
+
+      button {
+        @include button($pad: 10px 30px);
+        text-transform: uppercase;
+        background-color: rgba(255, 255, 255, 0.753);
+        border: 3px solid white;
+        color: $body;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+      button:hover {
+        @include hover($back: white, $color: $body);
       }
     }
   }
 }
 
 @media screen and (max-width: 450px) {
-  .chat_section {
-    @include flex($content: center);
+  .user_chat_section {
+    width: 95%;
     height: 100vh;
-    width: 100vw;
+    // border: 5px solid purple;
 
-    .user_chat_section {
-      width: 95%;
-      height: 100vh;
-      // border: 5px solid purple;
-
-      nav {
-        width: 100%;
-        margin: 0px auto;
-        i {
-          font-size: 1.2rem;
-          margin-right: 22px;
-        }
-        div {
-          @include flex($content: flex-start);
-          // border: 1px solid purple;
-          height: 60px;
-
-          img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-          }
-          h1 {
-            font-size: 24px;
-            font-weight: 500;
-          }
-        }
+    nav {
+      width: 100%;
+      margin: 0px auto;
+      i {
+        font-size: 1.2rem;
+        margin-right: 22px;
       }
-
-      .user_chats {
-        width: 100%;
-        height: 80vh;
-        margin: 10px auto;
+      div {
+        @include flex($content: flex-start);
         // border: 1px solid purple;
-        overflow-y: auto;
-        word-break: break-all;
-        padding: 0px 20px;
-        .left_user {
-          img {
-            width: 200px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: left;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: $body;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 8px 20px;
-            margin: 0px 0 30px;
-            background-color: $font;
-            float: left;
-            clear: both;
-            border-radius: 6px 6px 6px 2px;
-            // word-break: break-all;
+        height: 60px;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
+        }
+        h1 {
+          font-size: 24px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .user_chats {
+      width: 100%;
+      height: 80vh;
+      margin: 10px auto;
+      // border: 1px solid purple;
+      overflow-y: auto;
+      word-break: break-all;
+      padding: 0px 20px;
+      .left_user {
+        img {
+          width: 200px;
+          object-fit: cover;
+          border-radius: $reduce-md;
+          margin: 0px 0 50px;
+          float: left;
+          clear: both;
+          cursor: pointer;
+        }
+        p {
+          color: $body;
+          font-weight: 500;
+          font-size: 14px;
+          padding: 8px 20px;
+          margin: 0px 0 30px;
+          background-color: $font;
+          float: left;
+          clear: both;
+          border-radius: 6px 6px 6px 2px;
+          // word-break: break-all;
+        }
+      }
+      .right_user {
+        img {
+          width: 200px;
+          object-fit: cover;
+          border-radius: $reduce-md;
+          margin: 0px 0 50px;
+          float: right;
+          clear: both;
+          cursor: pointer;
+        }
+        p {
+          color: white;
+          font-weight: 500;
+          font-size: 14px;
+          padding: 8px 20px;
+          margin: 0px 0 30px;
+          background-color: $button;
+          float: right;
+          clear: both;
+          border-radius: 6px 6px 2px 6px;
+        }
+      }
+    }
+
+    .messsage_div {
+      width: 100%;
+      margin: 0px auto;
+      @include flex($content: space-between);
+      div {
+        width: 100%;
+        position: relative;
+        i {
+          position: absolute;
+          font-size: 1.2rem;
+          color: $font;
+          overflow: hidden;
+          top: 13px;
+          // border: 1px solid purple;
+          width: 30px;
+          cursor: pointer;
+        }
+        #image {
+          right: 48px;
+          input {
+            opacity: 0;
           }
         }
-        .right_user {
-          img {
-            width: 200px;
-            object-fit: cover;
-            border-radius: $reduce-md;
-            margin: 0px 0 50px;
-            float: right;
-            clear: both;
-            cursor: pointer;
-          }
-          p {
-            color: white;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 8px 20px;
-            margin: 0px 0 30px;
-            background-color: $button;
-            float: right;
-            clear: both;
-            border-radius: 6px 6px 2px 6px;
-          }
+        .fa-grin-beam {
+          right: 6px;
+        }
+        .message {
+          width: 100%;
+          font-size: 14px;
+          padding: 10px 85px 10px 10px;
+          background-color: #41b0ff96;
+          border: 3px solid #41b0ff;
+          border-radius: $reduce-md;
+          color: $font;
+          font-weight: 500;
+        }
+        .message::placeholder {
+          color: $font;
         }
       }
 
-      .messsage_div {
-        width: 100%;
-        margin: 0px auto;
-        @include flex($content: space-between);
-        div {
-          width: 100%;
-          position: relative;
-          i {
-            position: absolute;
-            font-size: 1.2rem;
-            color: $font;
-            overflow: hidden;
-            top: 13px;
-            // border: 1px solid purple;
-            width: 30px;
-            cursor: pointer;
-          }
-          #image {
-            right: 48px;
-            input {
-              opacity: 0;
-            }
-          }
-          .fa-grin-beam {
-            right: 6px;
-          }
-          .message {
-            width: 100%;
-            font-size: 14px;
-            padding: 10px 85px 10px 10px;
-            background-color: #41b0ff96;
-            border: 3px solid #41b0ff;
-            border-radius: $reduce-md;
-            color: $font;
-            font-weight: 500;
-          }
-          .message::placeholder {
-            color: $font;
-          }
-        }
-
-        button {
-          @include button($pad: 9px 20px, $size: $pera-sm);
-          text-transform: uppercase;
-          background-color: rgba(255, 255, 255, 0.753);
-          border: 3px solid white;
-          color: $body;
-          font-weight: bold;
-          margin-left: 10px;
-        }
-        button:hover {
-          @include hover($back: white, $color: $body);
-        }
+      button {
+        @include button($pad: 9px 20px, $size: $pera-sm);
+        text-transform: uppercase;
+        background-color: rgba(255, 255, 255, 0.753);
+        border: 3px solid white;
+        color: $body;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+      button:hover {
+        @include hover($back: white, $color: $body);
       }
     }
   }

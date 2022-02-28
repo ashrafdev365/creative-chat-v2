@@ -32,7 +32,6 @@ const chat = () => {
   const [message, setmessage] = useState([]);
   const [input, setinput] = useState("");
   const [image, setimage] = useState("");
-  const [side, setside] = useState(true);
   const { currentUser } = useAuth();
   const { data } = userData();
   const router = useRouter();
@@ -66,8 +65,6 @@ const chat = () => {
   //check user are authenticated
   useLayoutEffect(() => {
     !currentUser ? router.push("/") : null;
-
-    window.innerWidth > 1050 ? setside(true) : setside(false);
   });
 
   ///get message data
@@ -86,7 +83,7 @@ const chat = () => {
     e.preventDefault();
     const docId = myId?.uid + userId?.uid;
     const q = query(collection(db, "message", `${docId}`, "data"));
-    if (!input) {
+    if (!input && !image) {
       return console.log("Please write something");
     } else {
       await addDoc(q, {
@@ -97,6 +94,7 @@ const chat = () => {
       });
       setinput("");
       setimage("");
+      scroll.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -162,100 +160,70 @@ const chat = () => {
   };
 
   return (
-    <section className="chat_section">
-      {side && (
-        <aside className="chat_user_data">
-          <User />
-        </aside>
-      )}
+    <main className="user_chat_section">
+      <nav>
+        <i className="fas fa-chevron-left" onClick={() => router.back()}></i>
 
-      <main className="user_chat_section">
-        <nav>
-          <i className="fas fa-chevron-left" onClick={() => router.back()}></i>
-
-          {data
-            .filter((value) => {
-              return value.uid == router.query.chat;
-            })
-            .map((value) => {
-              return (
-                <div>
-                  <img src={value?.photo} alt="" />
-                  <h1>{value?.name}</h1>
-                </div>
-              );
-            })}
-        </nav>
-
-        <section className="user_chats">
-          {message.map((val) => {
+        {data
+          .filter((value) => {
+            return value.uid == router.query.chat;
+          })
+          .map((value) => {
             return (
-              <div
-                className={
-                  val.uid == currentUser.uid ? "right_user" : "left_user"
-                }
-                key={val.id}
-              >
-                {val.img ? (
-                  <img
-                    src={val.img}
-                    onClick={() => handleDownloadImage(val.img)}
-                    alt=""
-                  />
-                ) : (
-                  <p>{val.msg}</p>
-                )}
+              <div>
+                <img src={value?.photo} alt="" />
+                <h1>{value?.name}</h1>
               </div>
             );
           })}
-        </section>
-        {/**/}
-        <form className="messsage_div" onSubmit={handleSubmit}>
-          <div>
-            <i class="fas fa-images" id="image">
-              <input type="file" onChange={handleImage} />
-            </i>
+      </nav>
 
-            <i className="fas fa-grin-beam"></i>
-            <input
-              type="text"
-              placeholder="Write Message.."
-              className="message"
-              onChange={(e) => setinput(e.target.value)}
-              value={!image || image == "" ? input : image}
-            />
-          </div>
+      <section className="user_chats">
+        {message.map((val) => {
+          return (
+            <div
+              className={
+                val.uid == currentUser.uid ? "right_user" : "left_user"
+              }
+              key={val.id}
+              onClick={() => navigator.clipboard.writeText(val.msg)}
+            >
+              {val.img ? (
+                <img
+                  src={val.img}
+                  onClick={() => handleDownloadImage(val.img)}
+                  alt=""
+                />
+              ) : (
+                <p>{val.msg}</p>
+              )}
+            </div>
+          );
+        })}
+        <div ref={scroll} />
+      </section>
 
-          <button type="submit">Send</button>
-        </form>
-      </main>
-    </section>
+      {/**/}
+      <form className="messsage_div" onSubmit={handleSubmit}>
+        <div>
+          <i class="fas fa-images" id="image">
+            <input type="file" onChange={handleImage} />
+          </i>
+
+          <i className="fas fa-grin-beam"></i>
+          <input
+            type="text"
+            placeholder="Write Message.."
+            className="message"
+            onChange={(e) => setinput(e.target.value)}
+            value={!image || image == "" ? input : image}
+          />
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+    </main>
   );
 };
 
 export default chat;
-
-// useEffect(async () => {
-//   const myDoc = doc(db, "userInfo", `${currentUser.email}`);
-//   const userDoc = doc(db, "userInfo", `${user[0]?.id}`);
-
-//   await updateDoc(userDoc, {
-//     chatUser: {
-//       [displayName]: 1234567890,
-//     },
-//   });
-//   const name = user[0]?.name;
-//   await updateDoc(myDoc, {
-//     chatUser: {
-//       [name]: 1234567890,
-//     },
-//   });
-// });
-
-// const docRef = doc(db, "message", `${myId?.uid + userId?.uid}`);
-// const docSnap = await getDoc(docRef);
-// if (docSnap.exists()) {
-//   setmessage(docSnap.data());
-// } else {
-//   console.log("No such document!");
-// }
