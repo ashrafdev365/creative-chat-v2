@@ -94,7 +94,7 @@ const chat = () => {
       });
       setinput("");
       setimage("");
-      scroll.current.scrollIntoView({ behavior: "smooth" });
+      // scroll.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -200,7 +200,7 @@ const chat = () => {
             </div>
           );
         })}
-        <div ref={scroll} />
+        {/* <div ref={scroll} /> */}
       </section>
 
       {/**/}

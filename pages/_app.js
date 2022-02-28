@@ -43,12 +43,12 @@ function MyApp({ Component, pageProps, router }) {
             },
           }}
         > */}
-          <AuthContextProvider>
-            <UserDataProvider>
-              <Component {...pageProps} />
-            </UserDataProvider>
-          </AuthContextProvider>
-        {/* </motion.div>
+      <AuthContextProvider>
+        <UserDataProvider>
+          <Component {...pageProps} />
+        </UserDataProvider>
+      </AuthContextProvider>
+      {/* </motion.div>
       </AnimatePresence> */}
     </>
   );
