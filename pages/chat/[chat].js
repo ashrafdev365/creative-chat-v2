@@ -1,7 +1,5 @@
-import User from "../../Components/Users/User";
 import { useAuth } from "../../Firebase/Context";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { userData } from "../../Firebase/UserContext";
 import { db } from "../../Firebase/firebase";
@@ -11,19 +9,14 @@ import {
   doc,
   collection,
   query,
-  updateDoc,
   setDoc,
-  where,
-  getDoc,
   orderBy,
   serverTimestamp,
   addDoc,
-  limit,
 } from "firebase/firestore";
 import {
   getStorage,
   ref,
-  uploadBytesm,
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
@@ -54,7 +47,7 @@ const chat = () => {
     .map((value) => value);
   const myId = myData[0];
 
-  //when currentUser enter the chat user then create a document
+  //when the currentUser first time enter the chat user then create a document
   useEffect(async () => {
     await setDoc(doc(db, "message", `${myId?.uid + userId?.uid}`), {
       fistUserName: displayName,
@@ -62,12 +55,12 @@ const chat = () => {
     });
   });
 
-  //check user are authenticated
+  //check the user is authenticated
   useLayoutEffect(() => {
     !currentUser ? router.push("/") : null;
   });
 
-  ///get message data
+  ///get the message data
   useLayoutEffect(() => {
     const q = query(
       collection(db, "message", `${myId?.uid + userId?.uid}`, "data"),
@@ -104,7 +97,7 @@ const chat = () => {
     uploadImage(file);
   };
 
-  //upload the on firebase storage & get the image URL
+  //upload the image on firebase storage & get the image URL
   const uploadImage = (file) => {
     const storage = getStorage();
 
